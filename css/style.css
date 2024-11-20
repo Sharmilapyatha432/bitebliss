@@ -1,0 +1,426 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* CSS for header section */
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0;
+  padding-left: 130px;
+}
+
+
+.nav-links {
+    display: flex;
+    /* justify-content: space-between; */
+    list-style-type: none;
+  }
+
+  .nav-links li {
+    margin: 0 10px;
+  }
+
+  .nav-links a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #c4c4c4;
+    font-size: 0.9em;
+  }
+
+  .nav-link.active a:hover {
+    color: white;
+  }
+
+  .nav-links a i {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: black;
+  }
+
+  .nav-links a span {
+    font-size: 0.85em;
+    color: black;
+  }
+
+  .nav {
+  background-color: #f8f9fa; /* Light background */
+  padding: 15px; /* Add some padding */
+  width: 250px; /* Set a width for the sidebar */
+  height: 100vh; /* Full height */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+
+  .nav-item {
+      margin-bottom: 10px; /* Space between items */
+  }
+
+  .nav-link {
+      display: block; /* Make the link fill the item */
+      padding: 10px 15px; /* Add padding */
+      color: #333; /* Text color */
+      text-decoration: none; /* Remove underline */
+      border-radius: 5px; /* Rounded corners */
+      transition: background-color 0.3s; /* Smooth background change */
+  }
+
+  .nav-link:hover {
+      background-color: #e2e6ea; /* Change background on hover */
+  }
+
+/* Header Section ends here */
+
+/* CSS for main section */
+
+.content {
+    display: flex;
+    /* background-color: #C4F4E7; */
+    /* width: 80%; */
+  }
+
+/* Main section ends here */
+
+/* CSS for sidebar */
+
+/* .sidebar{ */
+  /* background-color: #39A6B0; */
+  /* width: 20%;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; */
+  /* position: fixed; */
+/* } */
+
+/* strong  a {
+  color: #333;
+} */
+
+.sidebar .nav.flex-column {
+  list-style-type: none;
+  padding: 10px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+/* #left .ol_ol li {
+  margin-bottom: 10px;
+  padding: 20px;
+  text-align: center;
+} */
+
+.sidebar .nav.flex-column li {
+  padding: 15px;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  list-style: none;
+}
+
+.sidebar .nav.flex-column li a {
+  color: #333;
+  display: block;
+}
+
+/* Sidebar CSS ends here */
+
+
+
+/* CSS for dropdown */
+
+.dropdown{
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown > button{
+  /* width: 170px; */
+  /* height: 60px; */
+  border: 0;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 17px;
+  background: #f1f1f1;
+}
+
+.dropdown > .content{
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  /* padding: 0 16px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  text-decoration: underline;
+  /* color: #f7f7f7; */
+}
+
+.dropdown > .content > p{
+  padding-bottom: 20%;
+}
+
+.dropdown > .content:hover > p{
+  color: #fff;
+}
+
+.dropdown > .content::after{
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  right: 10%;
+  width: 80%;
+  height: 1px;
+  transform: scaleX(0);
+  background: rgba(255 255 255 /30%);
+  transition: 0.3s;
+}
+
+.dropdown:hover
+.content::after{
+  transform: scaleX(1);
+}
+
+.dropdown > .content > span:last-child{
+  margin-left: auto;
+  transition: 0.3s;
+}
+
+.dropdown:hover > .content > span:last-child{
+  rotate: -180deg;
+}
+
+.dropdown > .menu{
+  position: absolute;
+  z-index: 1;
+  top: -6px;
+  left: 50%;
+  display: grid;
+  width: 110%;
+  padding: 70px 0 6px;
+  border-radius: 6px;
+  translate: -50% 0;
+  visibility: hidden;
+  opacity: 0;
+  scale: 0.85;
+  /* background: linear-gradient(#ea8d8d, #a890fe); */
+  background: #00636E;
+  transition: 0.3s;
+}
+
+.dropdown:hover > .menu{
+  visibility: visible;
+  opacity: 1;
+  scale: 1;
+}
+
+.dropdown > .menu > a{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f7f7f7;
+  font-size: 14px;
+  padding: 0 24px;
+}
+
+.dropdown > .menu > a > p{
+  color: #333;
+  font-size: 16px;
+  text-decoration: underline;
+  padding: 10px;
+}
+
+.dropdown > .menu >a:hover{
+  /* background: rgba(0 0 0 / 10%); */
+    background-color: #C4F4E7;
+}
+
+/* Dropdown CSS ends here */
+
+/* CSS for footer section */
+#footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.quick-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.quick-links li {
+    margin-bottom: 10px;
+}
+
+.quick-links li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.quick-links li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
+/* Footer CSS ends here */
+
+/* Container and Title */
+.card-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Grid Styling */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-main {
+  flex: 1 1 calc(33.33% - 20px); /* 3 cards per row on medium to large screens */
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+/* Card Styling */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+  text-align: left;
+}
+
+/* Card Text Styling */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Form Styling */
+.form-label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .card-main {
+      flex: 1 1 calc(50% - 20px); /* 2 cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .card-main {
+      flex: 1 1 100%; /* 1 card per row on extra small screens */
+  }
+}
